@@ -1,18 +1,37 @@
 <?php
 
+//$character = 's';
+//$numbersArray = array();
+$b= explode(" " , $argv[1]);
+$c= 0;
+
+foreach ($b as $value)
+$a= substr($value, -1);
+switch ($a) {
+	case 'd':
+	$c=$c+((int)$value * 86400);
+	break;
+
+case 'h':
+$c=$c+((int) $value * 3600);
+
+	 break;
+
+ case 'm':
+ $c=$c+((int) $value * 60);
+
+ 	break;
+
+	case 's':
+ $c=$c+(int) $value;
+
+	break;
 
 
-readline ("wat is je tijd" );
-$seconds = "150";
-$minutes = floor($seconds/60);
-$secondsleft = $seconds%60;
-if($minutes<10)
-	$minutes = "0" . $minutes;
-if($secondsleft<10)
-	$secondsleft = "0" . $secondsleft;
+	default:
+		echo "is geen tijd";
+		break;
+}
 
-echo "$minutes:$secondsleft minutes";
-
-
-
+echo "${c} seconde";
 ?>
